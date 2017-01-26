@@ -88,7 +88,6 @@ RUN postconf -M submission/inet="submission inet n - n - - smtpd" && \
     postconf -P "10025/inet/relay_recipient_maps=" && \
     postconf -M policyd-spf/unix="policyd-spf unix - n n - - spawn user=nobody argv=/usr/bin/policyd-spf-fs -debug 1"
     
-EXPOSE 25
-EXPOSE 587
+EXPOSE 25 587
 
 ENTRYPOINT ["/init"]
