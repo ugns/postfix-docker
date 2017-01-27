@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+loopwhilex foreground {
+  curl -sSL http://www.spamhaus.org/drop/drop.txt |awk '/; SBL/ {printf("%s\tR
+EJECT %s\n",$1,$3)}' > /etc/postfix/drop.cidr
+} sleep 604800
