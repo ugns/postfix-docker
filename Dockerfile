@@ -4,8 +4,7 @@ MAINTAINER Jeremy T. Bouse <Jeremy.Bouse@UnderGrid.net>
 RUN set -ex && \
     apk upgrade --update && \
     apk add --no-cache postfix postfix-pcre postfix-pgsql ca-certificates policyd-spf-fs curl && \
-    curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz | tar xvzf - -C /  && \
-    apk del --no-cache curl && \
+    curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz | tar xzf - -C /  && \
     (rm -rf /var/cache/apk/* 2>/dev/null || true) 
 
 RUN postconf -e virtual_alias_maps= && \
